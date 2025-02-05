@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 class NotificationServices {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
+//Permission!
   void requestNotificationPermission() async {
     NotificationSettings settings = await messaging.requestPermission(
       alert: true, //알람수신 ㅇㅋ?
@@ -21,5 +22,10 @@ class NotificationServices {
     } else {
       print('Permission Denied');
     }
+  }
+
+  Future<String> getDeviceToken() async {
+    String? fcmToken = await messaging.getToken();
+    return fcmToken!;
   }
 }

@@ -1,4 +1,4 @@
-import 'package:fcmpractice/notification_servide.dart';
+import 'package:fcmpractice/notification/notification_servide.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  final fcmToken = await FirebaseMessaging.instance.getToken();
   runApp(const MyApp());
 }
 
@@ -35,6 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     notificationServices.requestNotificationPermission();
+    notificationServices.getDeviceToken().then((onValue) {
+      print(onValue);
+    }); //토큰받아오기
   }
 
   @override
