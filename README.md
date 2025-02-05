@@ -12,7 +12,7 @@ app수준 build.gradle 에서
 android/app/src/main/kotlin/com/example/fcmpractice/MainActivity.kt 수정
 경로를  android/app/src/main/kotlin/원하는/이름/으로/MainActivity.kt
 
-#fcm 초기설정정
+#fcm 초기설정
 flutter pub add flutter_local_notifications
 flutter pub add app_settings
 # Firebase & FCM 설정 (Flutter)
@@ -41,6 +41,25 @@ defaultConfig {
 ```sh
 android/app/src/main/kotlin/원하는/이름/으로/MainActivity.kt
 ```
+
+### IOS 설정
+**`ios/Podfile` 수정**
+```sh
+platform :ios, '13.0'
+
+Flutter/Release.xcconfig 에 추가하기
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
+
+
+
+cd ios
+pod deintegrate
+pod repo update
+pod install
+cd ..
+
+```
+
 
 ## 3. FCM 초기 설정
 ```sh
