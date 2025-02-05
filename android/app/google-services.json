@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "1075540931631",
+    "project_id": "buttonweb-2e860",
+    "storage_bucket": "buttonweb-2e860.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075540931631:android:eff6372219b85deceb82da",
+        "android_client_info": {
+          "package_name": "com.example.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUguNVPQ1L8L2TZ98lORMtw29sBVklS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075540931631:android:e0b912c00777632ceb82da",
+        "android_client_info": {
+          "package_name": "com.example.fcmflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUguNVPQ1L8L2TZ98lORMtw29sBVklS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075540931631:android:d90a5fb95c29e11aeb82da",
+        "android_client_info": {
+          "package_name": "com.fcm.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUguNVPQ1L8L2TZ98lORMtw29sBVklS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075540931631:android:6b5093dd082e1f4beb82da",
+        "android_client_info": {
+          "package_name": "com.fcm.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUguNVPQ1L8L2TZ98lORMtw29sBVklS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075540931631:android:26c8a031310ed061eb82da",
+        "android_client_info": {
+          "package_name": "com.fcmfcm.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUguNVPQ1L8L2TZ98lORMtw29sBVklS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
