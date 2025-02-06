@@ -103,7 +103,20 @@ class NotificationServices {
   handleMessage(BuildContext context, RemoteMessage message) {
     if (message.data['type'] == 'message') {
       Navigator.push(context,
-          MaterialPageRoute(builder: (conterxt) => NotificationScreen()));
+          MaterialPageRoute(builder: (context) => NotificationScreen()));
+    }
+  }
+
+  Future<void> setupInteractwhanAppNotOpen(BuildContext context) async {
+    //앱이 백그라운드일때
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {
+      handleMessage(context, event);
+    });
+
+    //앱이 종료되었을때
+    RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
+    if (initialMessage != null) {
+      handleMessage(context, initialMessage);
     }
   }
 }

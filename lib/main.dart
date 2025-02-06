@@ -14,12 +14,11 @@ void main() async {
 }
 
 @pragma('vm:entry-point')
-Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message)async{
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   print(message.notification!.title.toString());
   print(message.notification!.body.toString());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -47,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     notificationServices.requestNotificationPermission();
     notificationServices.firebaseInit(context);
+    notificationServices.setupInteractwhanAppNotOpen(context);
     notificationServices.getDeviceToken().then((value) {
       print('Device_Token:-');
       print(value);
