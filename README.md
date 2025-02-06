@@ -29,6 +29,13 @@ flutterfire configure
 그 후 app이름은 원하는.이름.으로
 ```
 
+
+## 3. Firebase 속성 연결2
+```sh
+flutterfire configure 하고 생성된 firebase_options.dart에서 번들 이름 보고 해당되는 파배 앱의 sdk를 보고 파일 다운해서 넣어주기. GoogleSerice-Info.plist랑 안드도.
+```
+
+
 ### Android 설정
 **`android/app/build.gradle` 수정**
 ```gradle

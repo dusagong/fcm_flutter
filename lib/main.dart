@@ -37,8 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     notificationServices.requestNotificationPermission();
-    notificationServices.getDeviceToken().then((onValue) {
-      print(onValue);
+    notificationServices.getDeviceToken().then((value) {
+      print('Device_Token:-');
+      print(value);
     }); //토큰받아오기
   }
 
