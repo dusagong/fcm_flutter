@@ -49,6 +49,13 @@ defaultConfig {
 android/app/src/main/kotlin/원하는/이름/으로/MainActivity.kt
 ```
 
+**`AndroidManifest.xml` 추가 변경**
+```sh
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="high_importance_channel" />
+```
+
 ### IOS 설정
 **`ios/Podfile` 수정**
 ```sh
@@ -73,6 +80,8 @@ cd ..
 flutter pub add flutter_local_notifications
 flutter pub add app_settings
 ```
+
+
 
 이제 Firebase와 FCM 설정이 완료되었습니다! 🚀
 
