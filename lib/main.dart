@@ -1,5 +1,5 @@
 import 'package:fcmpractice/firebase_options.dart';
-import 'package:fcmpractice/notification/notification_servide.dart';
+import 'package:fcmpractice/notification/notification_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
