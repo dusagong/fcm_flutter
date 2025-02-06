@@ -28,4 +28,11 @@ class NotificationServices {
     String? fcmToken = await messaging.getToken();
     return fcmToken!;
   }
+
+  void firebaseInit(){
+    FirebaseMessaging.onMessage.listen((message){
+      print(message.notification!.title.toString());
+      print(message.notification!.body.toString());
+    });
+  }
 }
