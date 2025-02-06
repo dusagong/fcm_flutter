@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'dart:math';
 
+import 'package:fcmpractice/notification/notification_screen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -35,10 +37,17 @@ class NotificationServices {
     return fcmToken!;
   }
 
-  void firebaseInit() {
+  void firebaseInit(BuildContext context) {
     FirebaseMessaging.onMessage.listen((message) {
       print(message.notification!.title.toString());
       print(message.notification!.body.toString());
+      print(message.data.toString());
+
+      print(message.data['type']);
+      print(message.data['id']);
+      if (Platform.isAndroid) {
+        initLocalNotifications(context, message);
+      }
       showNotification(message);
     });
   }
@@ -75,16 +84,26 @@ class NotificationServices {
           notificationDetails);
     });
   }
-  // void initLocalNotifications(
-  //     BuildContext context, RemoteMessage message) async {
-  //   var androidInitializationSettings =
-  //       AndroidInitializationSettings('@mipmap/ic_launcher');
-  //   var iosInitializationSettings = DarwinInitializationSettings();
 
-  //   var initializeSettings = InitializationSettings(
-  //       android: androidInitializationSettings, iOS: iosInitializationSettings);
+  void initLocalNotifications(
+      BuildContext context, RemoteMessage message) async {
+    var androidInitializationSettings =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    var iosInitializationSettings = DarwinInitializationSettings();
 
-  //   await flutterLocalNotificationsPlugin.initialize(initializeSettings,
-  //       onDidReceiveNotificationResponse: (payload) {});
-  // }
+    var initializeSettings = InitializationSettings(
+        android: androidInitializationSettings, iOS: iosInitializationSettings);
+
+    await flutterLocalNotificationsPlugin.initialize(initializeSettings,
+        onDidReceiveNotificationResponse: (payload) {
+      handleMessage(context, message);
+    });
+  }
+
+  handleMessage(BuildContext context, RemoteMessage message) {
+    if (message.data['type'] == 'message') {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (conterxt) => NotificationScreen()));
+    }
+  }
 }

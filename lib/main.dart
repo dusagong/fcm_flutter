@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     notificationServices.requestNotificationPermission();
-    notificationServices.firebaseInit();
+    notificationServices.firebaseInit(context);
     notificationServices.getDeviceToken().then((value) {
       print('Device_Token:-');
       print(value);
